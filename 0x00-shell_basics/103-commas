@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1p | sort -k1,1n -k1.2 | sed -e 's/\(.*\)\/$/\1\//' | paste -sd
+ls -a | sort -d --version-sort | sed -e 's/$/,/' -e 's/^\.$/\.\/&/' -e 's/^\.\.$/\.\/&/'
