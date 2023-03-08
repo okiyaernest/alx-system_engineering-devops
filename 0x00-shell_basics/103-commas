@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1v | awk '{printf "%s%s", (/^./$/) ? "" : (//$/) ? $0 : $0 ", "} END {print ""}'
+ls -A1v | awk '{printf("%s%s",$0,(NR%2==0)?"\n":",")}' | sed -e 's/,$/\n/' -e 's/$///' -e '1s/^/..,\n./'
