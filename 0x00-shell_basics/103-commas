@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1ap | sed 's/\([^/]\)$/&,/' | sed 's/^\.\{1,2\}$/&\//' | LC_COLLATE=C sort -df | sed ':a;N;$!ba;s/,\n/\n/'
+ls -1p | sort -k1,1n -k1.2 | sed -e 's/\(.*\)\/$/\1\//' | paste -sd
