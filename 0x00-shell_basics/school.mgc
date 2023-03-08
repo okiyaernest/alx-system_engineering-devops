@@ -1,2 +1,2 @@
 #!/bin/bash
-file -m /path/to/school.mgc my_school_data.dat
+file -k school.mgc filename
