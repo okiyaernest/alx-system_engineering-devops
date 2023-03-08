@@ -1,2 +1,2 @@
 #!/bin/bash
-cp -u ./current_directory/*.html ./parent_directory/
+cp -u $(ls -1 *.html) ..
