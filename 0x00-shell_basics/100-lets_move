@@ -1,2 +1,2 @@
 #!/bin/bash
-for file in [A-Z]*; do mv "$file" /tmp/u/; done
+ls [A-Z]* | xargs -I {} sh -c 'mv {} /tmp/u/'
