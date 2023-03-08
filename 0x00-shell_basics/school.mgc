@@ -1,2 +1,1 @@
-#!/bin/bash
-file -k school.mgc filename
+0 string SCHOOL School data file
