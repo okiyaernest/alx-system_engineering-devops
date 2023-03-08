@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a | sort -d --version-sort | sed -e 's/$/,/' -e 's/^\.$/\.\/&/' -e 's/^\.\.$/\.\/&/'
+ls -1AF | sed '$!s/$/,/' | tr -d '\n' && echo
