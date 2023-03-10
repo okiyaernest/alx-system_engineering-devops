@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $USER
+cat /etc/passwd | grep $(whoami) | cut -d: -f1
