@@ -1,4 +1,4 @@
-<h1>Scripts Functions<h1>
+<h1>Scripts Functions</h1>
 
 0-iam_betty: switches the current user to the user betty.
 
