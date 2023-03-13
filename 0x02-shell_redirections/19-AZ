@@ -1,2 +1,2 @@
 #!/bin/bash
-tr [OPTIONS] SET1 SET2
+cat input_file | tr Ac Ze > output_file
