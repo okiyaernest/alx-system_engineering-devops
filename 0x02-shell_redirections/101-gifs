@@ -1,2 +1,3 @@
 #!/bin/bash
-find . -type f -name "*.gif" -printf "%f\n" | sed 's/.gif$//' | sort -f
+exiftool -q -if '$framecount > 1' -p '$directory/$filename' -r -ext:gif .
+
