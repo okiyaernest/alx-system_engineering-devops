@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -n '' $1 | grep -E '^[0-9]*[02468]: ' | cut -d: -f2-
+cat input.txt | i=1; while read -r line; do ((i++ % 2)) && echo "$line"; done
