@@ -6,23 +6,26 @@ Created on Tue 13 August 11:47:53 2024
 @author: Ernest Okiya
 """
 
-import requests
+from json import loads
+from requests import get
+
 
 def number_of_subscribers(subreddit):
+    """ecursive function that queries the Reddit API and returns a list
+    containing the titles of all hot articles for a given subreddit. If no
+    results are found for the given subreddit, the function should return None
     """
-    Queries the Reddit API to get the number of subscribers for a given subreddit.
-    
-    Args:
-        subreddit (str): The name of the subreddit.
-    
-    Returns:
-        int: Number of subscribers if valid subreddit, else 0.
-    """
-    url = f'https://www.reddit.com/r/{subreddit}/about.json'
-    headers = {'User-Agent': 'my_reddit_api_agent'}
-    response = requests.get(url, headers=headers)
-    
-    if response.status_code == 200:
-        data = response.json()
-        return data.get('data', {}).get('subscribers', 0)
-    return 0
+    url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
+    headers = {
+        'User-Agent':
+        'Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9.2.3) \
+        Gecko/20100401 Firefox/3.6.3 (FM Scene 4.6.1)'
+    }
+    response = get(url, headers=headers)
+    reddits = response.json()
+
+    try:
+        subscribers = reddits.get('data').get('subscribers')
+        return int(subscribers)
+    except:
+        return 0
